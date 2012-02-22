@@ -20,8 +20,8 @@ public class Movie {
 		return _price.getPriceCode();
 	}
 
-	public void setPriceCode(int arg) {
-		switch (arg) {
+	public void setPriceCode(int priceCode) {
+		switch (priceCode) {
 		case REGULAR:
 			_price = new RegularPrice();
 			break;
@@ -40,10 +40,7 @@ public class Movie {
 	}
 
 	public int getFrequentRenterPoints(int daysRented) {
-		if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1) 
-			return 2;
-		
-		return 1;
+		return _price.getFrequentRenterPoints(daysRented);
 	}
 	
 	
