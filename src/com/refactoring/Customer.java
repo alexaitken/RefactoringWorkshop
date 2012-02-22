@@ -29,10 +29,7 @@ public class Customer {
 		
 		String result = "Rental Record for " + getName() + "\n";
 		
-		Iterator<Rental> rentals = _rentals.iterator();
-		while (rentals.hasNext()) {
-			Rental each = rentals.next();
-			
+		for (Rental each : _rentals) {
 			
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
