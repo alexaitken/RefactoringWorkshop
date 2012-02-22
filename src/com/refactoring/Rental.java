@@ -30,5 +30,9 @@ public class Rental {
 	public int getFrequentRenterPoints() {
 		return _movie.getFrequentRenterPoints(getDaysRented());
 	}
+
+	public String getTitle() {
+		return _movie.getTitle();
+	}
 	
 }
