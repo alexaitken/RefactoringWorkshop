@@ -1,7 +1,6 @@
 package com.refactoring;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 //From book: 'Refactoring' by Martin Fowler
@@ -25,12 +24,9 @@ public class Customer {
 	}
 	
 	public String statement() {
-		
-		
 		String result = "Rental Record for " + getName() + "\n";
 		
 		for (Rental each : _rentals) {
-			
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
 		}
@@ -44,6 +40,7 @@ public class Customer {
 	
 	private int totalFrequentRenterPoints() {
 		int result = 0;
+		
 		for (Rental each : _rentals) {
 			result += each.getFrequentRenterPoints();
 		}
@@ -53,9 +50,11 @@ public class Customer {
 	
 	private double totalCharge() {
 		double result = 0;
+		
 		for (Rental each : _rentals) {
 			result += each.getCharge();
 		}
+		
 		return result;
 	}
 	
