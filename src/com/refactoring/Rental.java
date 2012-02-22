@@ -7,7 +7,7 @@ package com.refactoring;
  */
 public class Rental {
 
-	private Movie _movie;
+	Movie _movie;
 	private int _daysRented;
 	
 	public Rental(Movie movie, int daysRented) {
@@ -27,14 +27,8 @@ public class Rental {
 		return _movie.getCharge(_daysRented);
 	}
 
-
 	public int getFrequentRenterPoints() {
-		if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) && getDaysRented() > 1) 
-			return 2;
-		
-		return 1;
+		return _movie.getFrequentRenterPoints(getDaysRented());
 	}
-	
-	
 	
 }
