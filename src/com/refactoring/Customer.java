@@ -35,10 +35,14 @@ public class Customer {
 			Rental each = rentals.next();
 			
 			// add frequent renter points
-			frequentRenterPoints++;
+			int frequentRenterPointsForRental = 0;
+			frequentRenterPointsForRental++;
 			// add bonus for a two day new release rental
 			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
-				frequentRenterPoints++;
+				frequentRenterPointsForRental++;
+			
+			frequentRenterPoints += frequentRenterPointsForRental;
+			
 			
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
